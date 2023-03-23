@@ -1,0 +1,21 @@
+@media screen and (max-width: 1346px) {
+  #section-4 #grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 885px) {
+  #section-4 #grid {
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 1355px) {
+  .discover .section-5-info {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .discover .section-5-info .explanation {
+    width: 100%;
+    text-align: center;
+  }
+}/*# sourceMappingURL=collin-responsive.css.map */

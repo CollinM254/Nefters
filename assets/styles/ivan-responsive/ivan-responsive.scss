@@ -1,0 +1,111 @@
+@media screen and (max-width:1420px) {
+    .discoverNFT-container{
+        .nft-list{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width:1346px) {
+    .collectionOver{
+        &-showcase{
+            grid-template-columns: 400px;
+            .collections-rating{
+                grid-column: 1/3;
+                grid-row: 4/7;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1130px) {
+    .header-content{
+        .header{
+            &-links{
+                display: none;
+            }
+            &-form{
+                display: none;
+            }
+            .mobile-menu{
+                display: block;
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width:950px) {
+    // .header-content{
+    //     // .header{
+            
+    //     // }
+    // }
+    
+    .hero{
+        .hero-container{
+            justify-content: center;
+            flex-wrap: wrap;
+            .leftSide-desc{
+                max-width: 100%;
+                text-align: center;
+                .desc-text{
+                    max-width: 100%;
+                }
+                .statistic-container{
+                    justify-content: center;
+                    .leftSide-dot_layer{
+                        transform: translate(-105px, -179px);
+                    }
+                }
+            }
+        }
+    }
+   .collectionOver{
+        &-showcase{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .big-row{
+                width: 400px;
+            }
+        }
+    }     
+    .discoverNFT{
+        &-container{
+            .discover-filter{
+                flex-wrap: wrap;
+            }
+            .nft-list{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+    
+   .footer{
+    &-nav{
+        flex-wrap: wrap;
+        
+
+        .nav-marketplaceDesc{
+            width: 100%;
+        }
+        .nav-markerPlace{
+            width: 50%;
+        }
+        .nav-myAccount{
+            width: 50%;
+        }
+        .nav-subscr{
+            width: 100%;
+            .input-content{
+                .input-btn{
+                    left: 26%;
+                }
+            }
+        }
+    }
+   }
+}

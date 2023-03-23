@@ -1,0 +1,870 @@
+
+$pure-white:#ffffff;
+$deep-blue:#3D00B7;
+$black-default:#000000;
+$white-gray:#F4F4F4;
+$light-gray:#EFEFEF;
+$light-green:#00AC4F;
+$gray:#838383;
+
+@mixin textBilder($font-family,$font-weight,$font-size,$font-style:normal) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: normal;
+    font-size: $font-size;
+}
+
+@mixin filledbutton($bg-color,$text-color:$pure-white, $padding-top-btm,$padding-lft-rgt){
+    background-color: $bg-color;
+    padding: $padding-top-btm $padding-lft-rgt;
+    color: $text-color;
+    border: none;
+    border-radius: 60px;
+    &:hover{
+        box-shadow: 0 0 5px rgba($color:$bg-color, $alpha: .5);
+    }
+    
+}
+
+@mixin conturedbutton($text-color,$padding-top-btm,$padding-lft-rgt){
+    background-color: $pure-white;
+    padding: $padding-top-btm $padding-lft-rgt;
+    color: $text-color;
+    border: 2px solid $text-color; 
+    border-radius: 60px;
+    transition: .1s background-color ease-out;
+    &:hover{
+        box-shadow:  0 0 5px rgba($color:$text-color, $alpha: .3);
+    }
+    &:active{
+        background-color: $text-color;
+        color: $pure-white;
+    }
+}
+
+
+
+/*Header content styling starts*/
+.header-content{
+    margin-top: 15px;
+    .header{
+        width: 85%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-logo{
+            font-family: 'Integral CF';
+            font-weight: 700;
+            color: $deep-blue;
+            font-size: 1.5rem;
+            margin-right: 1.9rem;
+        }
+        &-vertical_line{
+            height: 50px;
+            border-left: 1px solid $white-gray;
+        }
+        .mobile-menu{
+            display: none;
+           
+            
+
+        }
+
+        .menu{
+            background-image: url(../../images/icons/menu.png);
+            background-repeat: no-repeat;
+        }
+        .close{
+            background-image: url(../../images/icons/close.png);
+            background-repeat: no-repeat;
+        }
+        &-links{
+            font-family: 'DM Sans';
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            height:47px;
+            gap: 2.9rem;
+            flex-grow: 2;
+            .link-item{
+                text-decoration: none;
+                color: $black-default;
+            }
+            
+        }
+        &-form{
+            font-family: 'DM Sans';
+            display: flex;
+            
+            height: 50px;
+            gap: 20px;
+            flex-grow: 2;
+            .search-container{
+                .text-search{
+                    font-weight: 500;
+                    width: 90%;
+                    height: 100%;
+                    padding-left: 30px;
+                    border-radius: 100px;
+                    border: 2px solid $light-gray;
+                    
+                }
+                .button-search{
+                    width: 24px;
+                    height: 24px;
+                    display: inline;
+                    position: absolute;    
+                    transform: translate(-38px, 12px);
+                    padding: 0;
+                    background-color: $pure-white;
+                    background-image: url(../../images/icons/magnifier.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: none;
+
+                }
+                flex-grow: 3;
+            }
+            
+           
+            .input-upload{
+                @include textBilder('DM Sans',700, 0.875rem);
+                @include filledbutton( $deep-blue,$pure-white, 18px, 40px);                
+            }
+            .input-connect{
+                @include textBilder('DM Sans',700, 0.875rem);
+                @include conturedbutton($deep-blue, 18px, 22px);
+            }
+        }
+       
+    }
+    .hidden{
+        height: 0;
+    }
+    .header-mobile{
+        width: 85%;
+        margin: 0 auto;
+        transition: left .5s;
+        position: relative;
+        left: -100%;
+
+        .header-links_mobile{
+            font-family: 'DM Sans';
+            font-weight: 500;
+            display: flex;
+            
+            align-items: center;
+            list-style: none;
+            height:47px;
+            gap: 2.9rem;
+            flex-grow: 2;
+            .link-item{
+                text-decoration: none;
+                color: $black-default;
+            }
+            
+        }
+        .header-form_mobile{
+            font-family: 'DM Sans';
+            display: flex;
+            
+            height: 50px;
+            gap: 20px;
+            
+            .search-container{
+                .text-search{
+                    font-weight: 500;
+                    width: 90%;
+                    height: 100%;
+                    padding-left: 30px;
+                    border-radius: 100px;
+                    border: 2px solid $light-gray;
+                    
+                }
+                .button-search{
+                    width: 24px;
+                    height: 24px;
+                    display: inline;
+                    position: absolute;    
+                    transform: translate(-38px, 12px);
+                    padding: 0;
+                    background-color: $pure-white;
+                    background-image: url(../../images/icons/magnifier.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: none;
+
+                }
+            
+            }
+            
+           
+            .input-upload{
+                @include textBilder('DM Sans',700, 0.875rem);
+                @include filledbutton( $deep-blue,$pure-white, 18px, 40px);                
+            }
+            .input-connect{
+                @include textBilder('DM Sans',700, 0.875rem);
+                @include conturedbutton($deep-blue, 18px, 22px);
+            }
+        }
+    }
+    &_underline{
+        border: 1px solid $light-gray;
+    }
+}
+/*Header content styling ends*/
+
+/*Hero section styling starts*/
+.hero{
+    &-container{
+        max-width: 85%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom:122px;
+        .leftSide-desc{
+            max-width: 40%;
+            .desc-heading{
+                @include textBilder('Integral CF', 400, 2.5rem, normal);
+                margin-top: 64px;
+            }
+            .desc-text{
+                max-width: 80%;
+                @include textBilder('DM Sans', 400, 1.25rem, normal);
+                line-height: 160%;
+                color: #565656;
+            }
+            .exploreNow{
+                @include textBilder('Averta Demo', 400, 1.25rem, normal);
+                @include filledbutton($deep-blue, $pure-white, 20px, 40px);
+            }
+            .statistic-container{
+                display: flex;
+                gap: 23px;
+                .statistic-item{
+                    
+                    .item-total{
+                        @include textBilder('Integral CF', 700, 2.5rem, normal);
+                    }
+                    .item-name{
+                        @include textBilder('DM Sans', 400, 1.25rem, normal);
+                        color: #565656;
+                    }
+                }
+                
+            }
+            .leftSide-dot_layer{
+                position: absolute;
+                transform: translate(-45px, -179px);
+                z-index: -1;
+            }
+        }
+        .rightSide-images{
+            width: 500px;
+            height: 470px;
+            .img-descr{
+                width: 340px;
+                height: 429px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: absolute;
+                
+                transform: translate(91px, -405px);
+
+                z-index: 18;                            
+                .nft-descr{
+                    position: relative;
+                    top: 24px;
+                    .descr-heading{
+                        @include textBilder('DM Sans', 700, 1.75rem, normal);
+                        color: $pure-white;
+                        margin-bottom: 0;
+                    }
+                    .text{
+                        @include textBilder('DM Sans', 700, 1.25rem, normal);
+                        color: $pure-white;
+                        position: relative;
+                        margin-top: 9px;
+                        &::before{
+                            content: url(../../images/section-3-images/small.png);
+                            margin-right: 14px;
+                            position: relative;
+                            top: 10px;
+                        }
+                    }
+                }
+                .highest-bid{
+                    display: flex;
+                    justify-content: space-between;
+                    background: rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(25px);
+                    padding: 0 24px;
+                    border-radius: 12px;
+                    .current-bid{
+
+                        
+
+                        &_heading{
+                            @include textBilder('DM Sans', 500, .75rem, normal);
+                            color: $pure-white;
+                            margin-bottom: 7px;
+                        }
+                        &_total{
+                            @include textBilder('DM Sans', 700, 1rem, normal);
+                            color: $pure-white;
+                            margin-top: 7px;
+                            &::before{
+                                content: url(../../images/icons/ethereum\ 2.svg);
+                                position: relative;
+                                margin-right: 10px;
+                                top: 5px;
+                            }
+                        }
+                    }
+                    .bid-timeLeft{
+                        &_heading{
+                            @include textBilder('DM Sans', 500, .75rem, normal);
+                            color: $pure-white;
+                            margin-bottom: 7px;
+                        }
+                        &_time{
+                            @include textBilder('DM Sans', 700, 1rem, normal);
+                            color: $pure-white;
+                           margin-top: 12px;
+                        }
+                    }
+                }
+            }
+            
+
+            .first-layer{
+                position: relative;               
+                top: 11%;
+                left: 12%;
+                z-index: 10;
+
+            }
+            .second-layer{
+                position: absolute;
+                transform: translate(-270px, 77px);
+                // left: 25%;
+                // top: -77.5%;
+                z-index: 6;
+            }
+            .third-layer{
+                position: absolute;                
+                transform: translate(-200px, 103px);
+                // left: 38%;
+                // top: -156%;
+                z-index: 5;
+            }
+            .ellipse-layer{
+                position: absolute;
+                transform: translate(-393px, 269px);
+                z-index: 11;
+            }
+            .circleText-layer{
+                position: absolute;
+                transform: translate(-398px, 265px);                  
+                z-index: 12;
+            }
+            .etherium-layer{
+                position: absolute;
+                transform: translate(-348px, 308px) rotate(30deg);
+                z-index: 13;
+            }
+        }
+    }
+    
+}
+/*Hero section styling ends */
+
+/*Amaze section styling starts*/
+
+.amazeNFT{
+    padding: 70px 0;
+    background-color: rgba(217, 224, 236, 0.2);
+    backdrop-filter: blur(25px);
+    &-container{
+        max-width: 85%;
+        
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .amaze_heading{
+            width: 18%;
+            @include textBilder("Integral CF", 700, 1.75, normal);
+            
+        }
+        .amaze_desc{
+            
+            .desc-img{
+                position: relative;
+                top: 20px;
+            }
+            .desc-heading{
+                @include textBilder("DM Sans", 700, 1.25, normal);
+                display: inline-block;
+            }
+            
+            
+            .desc-text{
+                @include textBilder("DM Sans", 400, .875, normal);
+                padding-left: 36px;
+                line-height: 160%;
+                color: #696969;
+            }
+            
+           
+        }
+        .fast{
+            width:22%;
+        }
+        .growth{
+            width: 30%;
+        }
+    }
+    
+}
+
+/*Amaze section styling ends*/
+
+/*CollectionOver section starts*/
+.collectionOver{
+    margin-top: 134px;
+    margin-bottom: 151px;
+    &-showcase{
+        max-width: 85%;
+        margin: 0 auto;
+        display: grid;
+        column-gap: 52px;
+        row-gap: 41px;
+        grid-template-columns: 400px 360px 360px;
+        //grid-auto-rows: 147px;
+        justify-content: space-between;
+        
+        .big-row{
+            grid-row: 1/4;
+        }
+        
+        .collection-item{
+            .item-descr_big{
+                display: grid;
+                grid-template-columns: 48px 1fr 1fr;
+                column-gap: 10px;
+                align-items: center;
+                margin-top: 32px;
+                
+                .descr-heading{
+                    .name{
+                        @include textBilder('DM Sans', 700, 1.25rem, normal);
+                        margin: 0;
+                    }
+                    .quantity{
+                        @include textBilder('DM Sans', 400, .875rem, normal);
+                        margin: 0;
+                        color: #363639
+                    }
+
+                    
+                }
+                .descr-bid{
+                    justify-self: end;
+                    .highest-bid{
+                        @include textBilder('DM Sans', 500, .75rem, normal);
+                        margin: 0 0 7px 0;
+                        color: #3a3a3a;
+                    }
+                    .value{
+                        @include textBilder('DM Sans', 700, 1rem, normal);
+                        margin: 0;
+                        color: #3a3a3a;
+
+                        &::before{
+                            content: url(../../images/icons/ethereum_1.svg);
+                            position: relative;
+                            top: 3px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            .item-descr_small{
+                .name_small{
+                    @include textBilder('DM Sans', 700, 1.25rem, normal);
+                    margin: 3px 0 9px 0;
+                }
+                .value_small{
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    .avatar-profile{
+                        object-fit: contain;
+                    }
+                    .price{
+                        @include textBilder('DM Sans', 700, .75rem, normal);
+                        color: #00AC4F;
+                        border: 1px solid #00AC4F;
+                        border-radius: 6px;
+                        padding: 8px;
+                        position: relative;
+                        top: -4px;
+
+                        &::before{
+                            content: url(../../images/icons/ethereum_currency.svg);
+                            position: relative;
+                            top: 3px;
+                            margin-right: 5px;
+                        }
+                    }
+                    .quantity{
+                        @include textBilder('DM Sans', 400, .875rem, normal);
+                        color: #757575;
+                        margin: 0;
+                    }
+                }
+                .placeBid{
+                    @include textBilder('Averta Demo', 400, .875rem, normal);
+                    @include conturedbutton($deep-blue, 14px, 20px);
+                }
+                .active{
+                    background-color: $deep-blue;
+                    color: $pure-white;
+                 }
+            }
+        }
+        .small-row{
+            display: flex;
+            gap: 20px;
+        }
+        .collections-rating{
+            border-collapse: collapse;
+            grid-column: 3;
+            grid-row: 1/4;
+            
+            
+
+           
+                tr{
+                    td{
+                        
+                        &:not(:last-child){
+                            padding-right: 22px;
+                        }
+                    }
+                }
+                .underscored{
+                    border-bottom: 1px solid #F0F0F0;
+                }
+                .heading{                    
+                    @include textBilder('Integral CF', 700, 1.25rem, normal);
+                    text-align: start;                                                                               
+                }
+                .heading-subsrc{
+                    @include textBilder('DM Sans', 700, 1.125rem, normal);
+                    color: $deep-blue;
+                    padding-left: 5px;
+                    text-align: start;
+                }
+                .data-place{
+                    @include textBilder('DM Sans', 700, 1.5rem, normal);
+                    text-align: center;
+                }
+                // .data-image_container{
+                //     .small-nft{
+
+                //     }
+                // }
+                .data-name{
+                    @include textBilder('DM Sans', 500, 1rem, normal);
+                }
+                .data-valuation{
+                    @include textBilder('Poppins', 600, .875rem, normal);
+                    color: #636363;
+
+                    &::before{
+                        content: url(../../images/icons/ethereum_1.svg);
+                        position: relative;
+                        top: 5px;
+                        margin-right: 6px;
+                    }
+                }
+                .data-rate{
+                    @include textBilder('Poppins', 600, 1.25rem, normal);
+                    text-align: end;
+                }
+                .increase{
+                    color: #14C8B0;
+                }
+                .decrease{
+                    color: #FF002E;
+                }
+        }
+        
+    }
+}
+/*CollectionOver section ends*/
+
+/*Discover NFT's content styling starts*/
+.discoverNFT{
+    background-color: rgba(217, 224, 236, 0.2);
+    backdrop-filter: blur(25px);
+
+    &-container{
+       max-width: 85%;
+        margin:0 auto;
+        
+        .discover-heading{
+            @include textBilder('Integral CF', 700, 2.125rem);
+            padding-top: 64px;
+        }
+        .discover-filter{
+            display: flex;
+            gap: 12px;
+            
+            .filter-item{
+                @include textBilder('DM Sans', 500, .875rem);
+                @include filledbutton(#dcdcdc33, #000000, 10px, 20px);
+            }
+            .active{
+               background-color: $deep-blue;
+               color: $pure-white;
+            }
+            .allFilters{
+                color: #371C87;
+                position: relative;
+                margin-left: auto;
+                &::before{
+                    content: url(../../images/icons/filter.svg);
+                    margin-right: 10px;
+                    position: relative;
+                    top:3px;
+                }
+            }
+        }
+        .nft-list{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            justify-items: center;
+            margin-top: 2.5rem;
+            column-gap: 39px;
+            row-gap: 40px;
+
+            .hidden{
+                display: none;
+            }
+
+            
+            .nft-item{
+            
+                
+                max-width: 270px;
+                border-radius: 13px;
+                background-color: $pure-white;
+
+               
+                .item-image{
+                
+                    padding: 11px 11px 0px 11px;
+                    width: 100%;
+                    height: 234px;
+                    .image{
+                        border-radius: 14px;
+                        
+                    }
+                    .bidder{
+                        width: 30px;
+                        height: 30px;
+                        position: absolute;                        
+                        
+                        
+
+                        
+                    }
+                    .first{
+                        
+                        transform: translate( 10px,-20px);
+                    }
+                    .second{
+                        
+                        transform: translate(26px, -20px);
+                        
+                    }
+                    .third{
+                        
+                        transform: translate(45px,-20px);
+                    }
+                    .fourth{
+                        
+                        transform: translate(63px,-20px);
+                        
+                    }
+                   
+                }
+                .item-nftName{
+                    @include textBilder('DM Sans', 700, 1.23rem);
+                    
+                    margin: 19px 0 11px 23px;
+                }
+                .item-evaluation{
+                    width: 85%;
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid $white-gray;
+                    .nftValue{
+                        @include textBilder('DM Sans', 700, .685rem);
+                        margin: 0;
+                        position: relative;
+                        top: -3px;
+                        color: $light-green;
+
+                        &::before{
+                            content: url(../../images/icons/ethereum_currency.svg);
+                            position: relative;
+                            top: 4px;
+                            padding-right: 5px;
+                        }
+                    }
+                    .nftTotal{
+                        @include textBilder('DM Sans', 500, .822rem);
+                        color: $gray;
+                        margin:0;
+                    }
+                }
+                .item-bet{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 85%;
+                    margin: 0 auto;
+                    .leftTime{
+                        @include textBilder('DM Sans', 400, .685rem);
+                        background-color: #f5f5f5;
+                        color: #5539A8;
+                        border-radius: 16px;
+                        padding: 4px 11px;
+                        line-height: 175%;
+                    }
+                    .place_price{
+                        @include textBilder('DM Sans', 500, .96rem);
+                        border: none;
+                        background-color: $pure-white;
+                        color:  #4F33A3;
+                    }
+                }
+            }
+        }
+        .showMoreNft{
+            @include textBilder('DM Sans', 500, 1.25rem, normal);
+            @include conturedbutton(rgba(61, 0, 183, 1), 20px, 40px);
+            margin-top: 55px;
+            margin-bottom: 47px;
+            position: relative;
+            left: 45%;
+        }
+    }
+}
+
+/*Discover NFT's content stying ends*/
+
+/*Footer section starts*/
+.footer{
+    &-nav{
+        max-width: 85%;
+        margin: 79px auto 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 69px;
+        border-bottom: 1px solid $white-gray;
+
+        .nav-marketplaceDesc{
+            width:28%;
+            .desc-heading{
+                @include textBilder('Integral CF', bold, 1.5rem, normal);
+                margin-bottom: 27px;
+            }   
+            .desc-text{
+                @include textBilder('Averta Demo', 400, .875rem, normal);
+                line-height: 160%;
+                color: #3D3D3D;
+            }
+        }
+        .nav-marketPlace{
+            .marketPlace-heading{
+                @include textBilder('DM Sans', 700, 1.125rem, normal);
+            }
+            li{
+                list-style: none;
+                line-height: 200%;
+                .marketPlace-link{
+                    @include textBilder('DM Sans', 500, .875rem, normal);
+                    text-decoration: none;
+                    color: #3D3D3D;
+                }
+            }
+            
+        }
+        .nav-myAccount{
+            .myAccount-heading{
+                @include textBilder('DM Sans', 700, 1.125rem, normal);
+            }
+            li{
+                list-style: none;
+                line-height: 200%;
+                .myAccount-link{
+                    @include textBilder('DM Sans', 500, .875rem, normal);
+                    text-decoration: none;
+                    color: #3D3D3D;
+                }
+            }
+        }
+        .nav-subscr{
+            width: 364px;
+            margin-top: 1rem;
+            .heading{
+                @include textBilder('DM Sans', 700, 1.125rem, normal);
+            }
+            .subscr-text{
+                @include textBilder('DM Sans', 400, .875rem, normal);
+                line-height: 160%;
+                color: #3D3D3D;
+            }
+
+            .input-content{
+                margin-top: 24px;
+                .input-text{
+                    @include textBilder('DM Sans', 400, .75rem, normal);
+                    padding: 22px 195px 22px 23px;
+                    border: 2px solid #F1F1F1;
+                    border-radius: 46px;
+                    position: absolute;
+                }
+                .input-btn{
+                    @include textBilder('DM Sans', 400, .75rem, normal);
+                    @include filledbutton(#2639ED, $pure-white, 15px, 30px);
+                    position: relative;
+                    top: 8px;
+                    left: 57%;
+                
+                }
+            }
+        }
+    }
+    &-copyright{
+        @include textBilder('Averta Demo', 400, .875rem, normal);
+        text-align: center;
+        color: #A4A4A4;
+        margin: 15px 0 24px 0;
+    }
+}
+
+/*Footer section ends*/

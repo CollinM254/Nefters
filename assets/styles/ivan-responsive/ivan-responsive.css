@@ -1,0 +1,78 @@
+@media screen and (max-width: 1420px) {
+  .discoverNFT-container .nft-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1346px) {
+  .collectionOver-showcase {
+    grid-template-columns: 400px;
+  }
+  .collectionOver-showcase .collections-rating {
+    grid-column: 1/3;
+    grid-row: 4/7;
+  }
+}
+@media screen and (max-width: 1130px) {
+  .header-content .header-links {
+    display: none;
+  }
+  .header-content .header-form {
+    display: none;
+  }
+  .header-content .header .mobile-menu {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .hero .hero-container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero .hero-container .leftSide-desc {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero .hero-container .leftSide-desc .desc-text {
+    max-width: 100%;
+  }
+  .hero .hero-container .leftSide-desc .statistic-container {
+    justify-content: center;
+  }
+  .hero .hero-container .leftSide-desc .statistic-container .leftSide-dot_layer {
+    transform: translate(-105px, -179px);
+  }
+  .collectionOver-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .collectionOver-showcase .big-row {
+    width: 400px;
+  }
+  .discoverNFT-container .discover-filter {
+    flex-wrap: wrap;
+  }
+  .discoverNFT-container .nft-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-nav {
+    flex-wrap: wrap;
+  }
+  .footer-nav .nav-marketplaceDesc {
+    width: 100%;
+  }
+  .footer-nav .nav-markerPlace {
+    width: 50%;
+  }
+  .footer-nav .nav-myAccount {
+    width: 50%;
+  }
+  .footer-nav .nav-subscr {
+    width: 100%;
+  }
+  .footer-nav .nav-subscr .input-content .input-btn {
+    left: 26%;
+  }
+}/*# sourceMappingURL=ivan-responsive.css.map */

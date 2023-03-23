@@ -1,0 +1,38 @@
+
+@media screen and (max-width: 1346px) {
+  #section-4 {
+    #grid {
+      grid-template-columns:repeat( 2, 1fr);
+    }
+  }
+}
+@media screen and (max-width: 885px) {
+    #section-4 {
+      #grid {
+        justify-items: center;
+        grid-template-columns:repeat( 1, 1fr);
+      }
+    }
+  }
+
+@media screen and (max-width: 1355px) {
+  .discover {
+    .section-5-info {
+    //   justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      .explanation{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+@media screen and (max-width:1346px) {
+  .amazeNFT{
+    .amazeNFT-container{
+      flex-grow: calc(2, 1fr);
+    }
+  }
+  
+}
